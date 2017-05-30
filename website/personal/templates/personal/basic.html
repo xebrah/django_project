@@ -1,0 +1,28 @@
+{% extends "personal/header.html" %}
+{% load static %}
+
+{% block content %}
+<h4>Some shots of nature</h4>
+<div class="row">
+    <div class="col-sm-3">
+        <img class="img" src="{% static 'personal/img/Robin.jpg' %}" width="250" height="200" alt="nature">Nature shot of a Robin
+    </div>
+    <div class="col-sm-3">
+        <img class="img-rounded" src="{% static 'personal/img/avatar_1.jpg' %}" width="250" height="200">  A bird in the vast pearl of Afrique.
+    </div>
+    <div class="col-sm-3">
+        <img class="img-rounded" src="{% static 'personal/img/Shoebill.jpg' %}" width="250" height="200">  ShoeBill
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3" style="color:#f1f1f1">
+        <img class="img" src="{% static 'personal/img/dusky.jpg' %}" width="250" height="200" alt="nature">Dusky Crimsonwing
+    </div>
+    <div class="col-sm-3" style="color:#f2f2f2">
+        <img class="img-rounded" src="{% static 'personal/img/chimp.jpg' %}" width="250" height="200">  A young Chimp
+    </div>
+    <div class="col-sm-3" style="color:#f2f2f2">
+        <img class="img-rounded" src="{% static 'personal/img/Shoebill2.jpg' %}" width="250" height="200"> Another shot of a ShoeBill
+    </div>
+</div>
+{% endblock %}

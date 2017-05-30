@@ -1,0 +1,38 @@
+{% extends "personal/header.html" %}
+{% load static %}
+
+{% block content %}
+<center><h2>About Us</h2></center>
+<div>
+    <p style="font-family: cursive, Cambria; text-align:center; font-weight: bold" >We work with <strong>"nature"</strong>. We are a team of enviromental friendly individuals who bother to see the better tomorrow</p>
+    <h4>Below is our team</h4>
+</div>
+<div class="row" style="font-size:14px;">
+    <div class="col-sm-2">
+        <img class="img-circle" src="{% static 'about/img/zack.jpg' %}" width="100" height="100">              
+    </div>
+    <div class="col-sm-6" style="color:#000">
+        <p><strong><em>Mathew Acrington.</em></strong><br>Head of our team. Mathew is a visionary willing to save the lives of all wild life.<br>Contact him on +25675643526.<br>e-mail: mathewarc@protonmail.com</p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-2">
+        <img class="img-circle" src="{% static 'about/img/matt.jpg' %}" width="100" height="100">              
+    </div>
+    <div class="col-sm-6" style="color:#000">
+        <p><strong><em>Zack "Ryder" Aguta.</em></strong><br>Managing Director. Zack is a strong partner with the love for his work. He is willing to go the extra mile to see projects though.<br>Contact him on +256775689534.<br>e-mail: z_ack@yahoomail.com</p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-2">
+        <img class="img-circle" src="{% static 'about/img/zack_3.jpg' %}" width="100" height="100">              
+    </div>
+    <div class="col-sm-6" style="color:#000">
+        <p><strong><em>Abdul-Kareem Hamza.</em></strong><br>Quality Assurance Manager. Hamza is a down to earth gentleman with vast skills in quality assurance and also human resource. <br>Contact him on +256712342543.<br>e-mail: ab_Hamz4@gmail.com</p>
+    </div>
+</div>
+<br>
+
+{% endblock %}

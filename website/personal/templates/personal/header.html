@@ -1,0 +1,82 @@
+<!Doctype HTML>
+<html>
+    
+    <head>
+        <title>Python Web Trials #1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static '/personal/css/bootstrap.css' %}" type="text/css">
+        
+        <style type="text/css">
+            html, body{
+                height: 100%;
+            }
+            body{
+                padding-top: 20px;
+                background-image: url({% static 'personal/img/blurred-01.jpg' %});
+                background-size: cover; 
+            }
+            img{
+                border-radius: 4px;
+            }
+            #header{
+                font-family: 'Baloo Chettan', cursive;
+                font-weight: bold;
+                
+            }
+        </style>
+    </head> 
+    
+    <body class="body">
+        <div class="container-fluid" style="min-height: 95%;">
+            <div class="row">
+                <div class="col-sm-2">
+                    <center>
+                        <img src="{% static 'personal/img/giraffe.jpg' %}" class="img-responsive" alt="face"  style="height:140px">
+                    </center>
+                </div>
+        
+                <div class="col-sm-7" id="header"><br>
+                    <center><h1>Buddies of the Wild</h1></center>
+                    
+                </div>
+            </div>
+            
+            
+                <div class="row">
+                    <div class="col-sm-2">
+                        <br>
+                        <br>
+                        <div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="/blog/">Blog</a></li>
+                                <li><a href="/contact/">Gallery</a></li>
+                                <li><a href="/about/">About Us</a></li>
+                                <li><a href="/tables/">Comments</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-10">
+                        <div class="container-fluid">
+                            
+                            <br><br>
+                            {% block content %}
+                            
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            
+                   
+        </div>
+        
+            <footer>
+                <div class="container-fluid" style="margin-left:15px">
+                    <p><a href="#" target="_blank">Contact</a> | <a href="#" target="_blank">LinkedIn</a> | <a href="#" target="_blank">Twitter</a> | <a href="#" target="_blank">Google</a>
+                    </p>
+                </div>
+            </footer>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+
+    
+<div class="row" style="padding: 30px">
+    <form class="form-horizontal" action="/create" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="name">Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email"> Email</label>
+            <div class="col-sm-5"><input class="form-control" type="email" name="email" placeholder="e-mail"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="username">Username</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="text" name="username" placeholder="username">
+            </div>
+        </div>
+        <div class="form-group"><div class="col-sm-2"></div><div class="col-sm-4"><input class="btn" type="submit" value="create"></div></div>
+        
+    </form><br>
+    <div class="container">
+        <table class="table table-condensed" style="width:70%;">
+        <thead>
+            <tr >
+                <th>Names</th>
+                <th>email</th>
+                <th>Username</th>
+                <th>Time created</th>
+                <th>Updated at</th>
+                <th>Actions</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            {% for blog in  blogs  %}
+                <tr>
+                    <td>{{ blog.name }}</td>
+                    <td>{{ blog.email }}</td>
+                    <td>{{ blog.username }}</td>
+                    <td>{{ blog.time_created }}</td>
+                    <td>{{ blog.time_updated }}</td>
+                    <td><a href="/edit/{{ blog.id }}">Edit</a><a href="/delete/{{ blog.id }}">Delete</a></td>  
+                </tr>
+                
+            {% endfor %}
+
+        </tbody>
+    </table>
+    </div>
+    
+</div>
+
+{% endblock %}

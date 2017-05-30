@@ -1,0 +1,56 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+<center><h2>Leave a comment</h2></center>
+<hr>
+<div class="container">
+<form class="form-horizontal" action="/create" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="name">Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="breed"> Comment </label>
+            <div class="col-sm-5"><input class="form-control" type="text" name="breed" placeholder="Comment"></div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4"><input class="btn btn-primary" type="submit" value="Comment"></div>
+        </div>
+        
+    </form>
+</div>    
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+                <h3 class="panel-title">Comments or feeds</h3>
+            </div>
+        <table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Comment</th>
+            <th>Time Posted</th>
+            <th>Updated at</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dog in dogs %}
+        <tr>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.breed }}</td>
+            <td>{{ dog.created_at }}</td>
+            <td>{{ dog.updated_at }}</td>
+            <td><a href="/edit/{{ dog.id }}">Edit </a>|<a href="/delete/{{ dog.id }}"> Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+    
+                
+{% endblock %}
